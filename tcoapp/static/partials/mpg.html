@@ -1,0 +1,40 @@
+<p>MPG partial</p>
+<!--{{foo}}-->
+<!--<a href="#" ng-click="setFoo($event,'egg')">change foo</a>-->
+
+<hr />
+
+<table>
+
+	<tr>
+		<th>Name</th>
+		<th>Miles</th>
+		<th>Litres</th>
+		<th>mpg</th>
+	</tr>
+
+	<tr ng-repeat="journey in journeys">
+
+		<td>
+			<input type="text" ng-model="journey.name" name="name" value="" />
+		</td>
+		<td>
+			<input type="text" ng-model="journey.miles" name="miles" value="" />
+		</td>
+		<td>
+			<input type="text" ng-model="journey.litres" name="litres" value="" />
+		</td>
+		<td>
+			{{ calcMpg(journey) }}
+		</td>
+
+	</tr>
+
+</table>
+
+<a href="" ng-click="addJourney()">add Journey</a>
+
+Average: {{ calcAverageMpg() }}
+
+
+<pre>{{journeys | json}}</pre>
